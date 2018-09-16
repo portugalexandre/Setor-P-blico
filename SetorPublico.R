@@ -1,13 +1,23 @@
-library(BETS)
+library(BETS) # Pacote para baixar o dados
 
-divida = BETSget(4536)
-plot(divida)
+divida = BETSget(4536) # Baixando s�rie de d�vida
 
-% elaborar 3 cenarios do comportamento da divida publica de 2017 ate 2021 %
-% considerar a fórmula dt=dt-1*(1+it)/((1+q)*(1+π))-h-s %
-% dt --> dívida pública/PIB no ano t;dt-1 --> dívida pública/PIB no anto t-1; it --> taxa nominal média ponderada dos juros da dívida pública no ano t;q --> taxa de crescimento real do PIB;π --> taxa de inflação;h --> superávit primário/pib;s=0. %
-% https://www.itau.com.br/itaubba-pt/analises-economicas/projecoes/longo-prazo-setembro-2018%
-% tem algum código pra puxar desse site as informaçoes?%
-% primeiro cenario – com superávits primários/PIB necessários para manter a dívida constante até 2021 %
-% segundo cenario - com superávits primários/PIB que reduza a dívida em 2% ao finaldos 5 anos %
-% terceiro cenario - com o déficit primário/PIB 2017 sendo reduzido em 5% do seu total ao ano (p.ex.,se em 2017 o déficit primário/PIB foi de 50%, em 2018 deve ser (1 – 0.05) x 50% =47,5%) %
+
+install.packages("dplyr", force = TRUE) # linha para instalar o pacote dplyr caso voc� n�o tenha
+library(dplyr) # Pacote para ler a manipular bases mais facilmente
+
+divida %>%
+  plot(col = "blue", ylab = "D�vida/PIB (em %)") # gerando um gr�fico para visualiza��o
+  
+
+install.packages("readr", force = TRUE) #se n�o tiver instalado o pacote, rode ESSA linha de c�digo
+library(readr) ## Pacote para ler e salvar bases de dados
+
+dados = data.frame(divida) # Gerando uma estrutura de dados apropriada
+
+write_csv(dados, path = getwd(), col_names = TRUE) #salvando um arquivo de excel com os dados
+saveRDS(dados, file = "dados.rds") # salvando em formato RData, �til para ter os dados limpos e leves
+
+# para saber onde ele salva o arquivo, rode a linha de c�digo abaixo                                                                                                   
+getwd()
+                                                                                                   
