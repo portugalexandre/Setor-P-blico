@@ -5,7 +5,7 @@ plot(divida)
 
 % elaborar 3 cenarios do comportamento da divida publica de 2017 ate 2021 %
 %considerar a fórmula dt=dt-1*(1+it)/((1+q)*(1+π))-h-s %
-% dt --> dívida pública/PIB no ano t;dt-1 --> dívida pública/PIB no anto t-1; it --> taxa nominal média ponderada dos juros da dívida pública no ano t;q --> taxa de crescimento real do PIB;π --> taxa de inflação;h --> superávit primário/pib;s=0%
+% dt --> dívida pública/PIB no ano t;dt-1 --> dívida pública/PIB no anto t-1; it --> taxa nominal média ponderada dos juros da dívida pública no ano t;q --> taxa de crescimento real do PIB;π --> taxa de inflação;h --> superávit primário/pib;s=0. %
 % https://www.itau.com.br/itaubba-pt/analises-economicas/projecoes/longo-prazo-setembro-2018%
 % tem algum código pra puxar desse site as informaçoes?%
 % primeiro cenario – com superávits primários/PIB necessários para manter a dívida constante até 2021 %
